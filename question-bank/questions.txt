@@ -1,0 +1,42 @@
+Sample Question Bank
+
+1. How is the number of terms a president can serve determined?
+	True: 22nd Amendment of the Constitution
+	False: Article II of the Constitution
+
+2. In the case of a tie in the Senate, the deciding vote is cast by...
+	True: The Vice President
+	False: The President Pro Tempore of the Senate
+
+3. How many Amendments are there to the Constitution?
+	True: Twenty-Seven
+	False: Twenty-Five
+
+4. If both the President and Vice President can no longer serve, who becomes the President?
+	True: The Speaker of the House
+	False: The President Pro Tempore of the Senate
+
+5. What piece of land did the US buy from France in 1803?
+	True: The Louisiana Territory
+	False: Florida
+
+6. A filibuster in the US Senate can be used to prevent legislation from coming to a vote.
+   Of the 100 US Senators, how many votes are needed to end a filibuster?
+	True: 60 votes.
+	False: 51 votes.
+
+7. Which of the following rights is guaranteed by the First Amendment of the Constitution?
+	True: The right of free speech
+	False: The right to privacy
+
+8. Which of the following rights is guaranteed by the 5th Amendment of the Constitution?
+	False: the right to privacy
+	True: The right to remain silent
+
+9. The U.S. Electoral College is...
+	True: An assembly that formally elects the President
+	False: An assembly that formally supervises and puts on the Presidential debates
+
+10. We elect US Senators for how many years?
+	True: Six years
+	False: Four years
