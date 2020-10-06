@@ -1,3 +1,23 @@
 /*I'm going to want some sort of CSS to make the timer tacked to the upper left corner*/
 /*I'm going to want some sort of CSS to tack the score to the upper right hand corner*/
 /*modal on win though this should be in the javascript.*/
+
+h1 {
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+
+#timer{
+  float: left;
+  border: 5px black;
+}
+
+#score {
+  float: left;
+
+}
+
+.question{
+  text-align: center;
+}
