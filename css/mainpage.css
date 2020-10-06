@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+}
+
+header {
+  font-family: 'Roboto', sans-serif;
+  background-color: #FFFFFB;
+  color: #CE1234;
+  text-align: center;
+  font-weight: bold;
+}
+body {
+  font-family: 'Robot', sans-serif;
+  background-color: #FFFFFB;
+  color: #283f9a;
+  text-align: center;
+  margin: auto 0;
+}
+
+.about {
+  background-color: #283F9A;
+  color: #FFFFFB;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin: 50px 550px 50px 550px;
+  padding: 16px;
+}
+
+p {
+  font-size: 25px;
+  padding: 2px;
+  margin: 10px;
+}
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  background-color: #283F9A;
+  border-radius: 5px;
+  color: #FFFFFB
+  cursor: pointer;
+  font-size: 125%;
+}
+
