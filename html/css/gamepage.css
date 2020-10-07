@@ -2,6 +2,26 @@
 /*I'm going to want some sort of CSS to tack the score to the upper right hand corner*/
 /*modal on win though this should be in the javascript.*/
 
+* {
+  box-sizing: border-box;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 0.5fr);
+  grid-template-rows: repeat(6, 0.5fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }
+  
+  .div1 { grid-area: 1 / 1 / 2 / 2; }
+  .div2 { grid-area: 1 / 5 / 2 / 6; }
+  .div3 { grid-area: 2 / 2 / 3 / 5; }
+  .div4 { grid-area: 3 / 2 / 4 / 5; }
+  .div5 { grid-area: 4 / 2 / 6 / 3; }
+  .div6 { grid-area: 4 / 4 / 6 / 5; }
+  .div7 { grid-area: 6 / 3 / 7 / 4; }
+  
 h1 {
   position: relative;
   margin: auto;
@@ -10,15 +30,18 @@ h1 {
 
 #timer{
   float: left;
-  padding: 10px;
-  border: 5px black;
+  padding: 15px;
+  margin: 10px;
+  border: 2px solid black;
 }
 
 #score {
   float: right;
-  padding: 10px;
+  padding: 15px;
+  margin: 10px;
+  border: 2px solid black;
 }
 
-.question{
-  text-align: center;
+button {
+  position: absolute;
 }
