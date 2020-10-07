@@ -89,7 +89,11 @@ const game = {
     ],
 
   getQuestion: function () {
-    const newQ = this.questionBank.question.find(question => [this.questionBank.question]); 
+    const newQ = []
+    for(let i = 0; i < this.questionBank.length; i++){
+      newQ.push(game.questionBank[i].question)
+    }
+
     // for(let i = 0; i < game.questionBank.length; i++){
     //   let question = game.questionBank[i].question;
     //   for(let i = 0; i < question.length; i++){
@@ -107,7 +111,7 @@ const game = {
   getAnswers: function (){
     // for(let i = 0; i < game.questionBank.length; i++){
       // maybe I need to loop back through to return a single object?
-      this.questionBank.forEach()
+      // this.questionBank.forEach()
       let answerA = game.questionBank[i].a
       let answerB = game.questionBank[i].b
       document.getElementById("a").append(answerA)
