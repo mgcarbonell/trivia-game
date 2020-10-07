@@ -110,7 +110,6 @@ const game = {
     ],
 
     getQuestion: function () {
-
       document.getElementById("question").innerHTML = ' ';
       setTimer(20)
       const newQ = this.questionBank[this.round].question
@@ -150,11 +149,39 @@ game.getQuestion()
 game.getAnswers()
 const answerA = document.getElementById("answerA");
 answerA.addEventListener("click", console.log("Hello!"));
+// 
 
 
-// Notes:
+//  NOTES:
+
 // can there be an eventListener to run the game.checkScore function. If value == game.questionBank[this.round].correctAnswer score++ round++ else if value != game.questionBank[this.round].correctAnswer round++
 // Should I just scrap the event listener on clicking the right 'container'/'div' and utilize a radio button or some other sort of button? This would mean changing the layout again. Not a big deal. 
+
+// CONCEPTS
+
+function answerSelection(e){
+  if (e.target.getElementById !== 'answer')
+  console.log("Select answer")
+  console.log(e.target)
+}
+
+// function handlePoke(e) {
+//   if (e.target.className !== 'squares'){  
+//     console.log('I poked a square')
+//     console.log(e.target)
+//     e.target.style.opacity = 0
+//     console.log(e.target.style.backgroundColor)
+//     if (e.target.style.backgroundColor === 'blue'){
+//       score++
+//       console.log(score)
+//       document.querySelector('h1').innerHTML = `scoreboard ${score}`
+//     } else {
+//       score--
+//       console.log(score)
+//     }
+//   } 
+// }
+
 // check if the element has been clicked every 2 seconds:
 // function isElementClicked (){
 //   console.log(elementIsClicked ? 'CLICKED' : 'NOT');
@@ -162,7 +189,7 @@ answerA.addEventListener("click", console.log("Hello!"));
 // setInterval(isElementClicked, 2000);
 // I could use this above method from stackoverflow, check to see if the div has been clicked every 2 seconds. Would give the user about 10 tries per round. Then I would need something that IF clicked answerA value === game.questionBank[game.round].correctAnswer score++ round++ else round++
 
-
+// SCRAPS:
 
 // shuffle: function () {
 //   for(let i = game.questionBank.length -1; i > 0; i--){
