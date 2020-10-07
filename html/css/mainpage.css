@@ -3,35 +3,19 @@
   src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 }
 
-header {
-  font-family: 'Roboto', sans-serif;
-  background-color: #FFFFFB;
-  color: #CE1234;
-  text-align: center;
-  font-weight: bold;
-}
-body {
-  font-family: 'Robot', sans-serif;
-  background-color: #FFFFFB;
-  color: #283f9a;
-  text-align: center;
-  margin: auto 0;
-}
+.parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }
+  
+  .div1 { grid-area: 2 / 2 / 3 / 3; }
+  .div2 { grid-area: 3 / 2 / 4 / 3; }
+  .div3 { grid-area: 4 / 2 / 5 / 3; }
 
-.about {
-  background-color: #283F9A;
-  color: #FFFFFB;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  margin: 50px 550px 50px 550px;
-  padding: 16px;
-}
-
-p {
-  font-size: 25px;
-  padding: 2px;
-  margin: 10px;
-}
+  
 button {
   padding: 0;
   border: none;
