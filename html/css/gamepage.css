@@ -57,18 +57,31 @@ h1 {
 
 #timer{
   float: left;
-  padding: 15px;
+  padding: 10px;
   margin: 10px;
-  border: 2px solid black;
+  border: 2px solid #444054;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
   background-color: #CE1234;
-  color: 
+  color: #FFFFFB;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 #score {
   float: right;
-  padding: 15px;
+  padding: 10px;
   margin: 10px;
-  border: 2px solid black;
+  border: 2px solid#444054;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
   background-color: #3E6E7a;
+  color: #FFFFFB;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
