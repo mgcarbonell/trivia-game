@@ -88,19 +88,34 @@ const game = {
       }
     ],
 
-  getQuestion: function (){
-    for(let i = 0; i < game.questionBank.length; i++){
-      console.log(game.questionBank[i].question)
+  getQuestion: function () {
+    const newQ = this.questionBank.question.find(question => [this.questionBank.question]); 
+    // for(let i = 0; i < game.questionBank.length; i++){
+    //   let question = game.questionBank[i].question;
+    //   for(let i = 0; i < question.length; i++){
+    //     console.log(question[i])
+    //   // let newQuestion = game.questionBank[i].question
+        document.getElementById("question").append(newQ)
+      // console.log(newQuestion)
+      // once an answer is chosen -> next question
+      // let's try a forEach(game.questionBank.question) loop rather than iterating up++
+         // maybe I need to loop back through to return a single object?
       /* append to document on question element*/
-    }
-  },
+      // }
+    },
 
   getAnswers: function (){
-    for(let i = 0; i < game.questionBank.length; i++){
-    console.log(game.questionBank[i].a, game.questionBank[i].b)
+    // for(let i = 0; i < game.questionBank.length; i++){
+      // maybe I need to loop back through to return a single object?
+      this.questionBank.forEach()
+      let answerA = game.questionBank[i].a
+      let answerB = game.questionBank[i].b
+      document.getElementById("a").append(answerA)
+      document.getElementById("b").append(answerB)
+      console.log(answerA)
     /* append answer A to container A
     append question B to container B */
-    }
+    // }
   },
   shuffle: function () {
     for(let i = game.questionBank.length -1; i > 0; i--){
@@ -122,7 +137,7 @@ const game = {
     Can I lump in a screen refresh?
     */
   },
-  /*getNextQuestion: functio() {
+  /*getNextQuestion: function() {
   }
 *//*
   timerReset: function() {
@@ -140,7 +155,7 @@ const game = {
         }
       }
   },
-  setUpRound: function (){
+  setUpRound: function (){ <- scrap
     if(current round < game.questionBank.length){
       Reset the elements to prep for getAnswer and getQuestion
       So sort of like the deal function?
@@ -171,5 +186,9 @@ const game = {
 game.shuffle()
 game.getQuestion()
 game.getAnswers()
-console.log(game.questionBank)
-console.log(game.questionBank[0].getCorrectAnswer())
+// aButton.addEventListener("click", function(eventObject){
+  
+// }
+// Notes:
+/* potentially use a forEach(question of the array) and display q&a
+make answers clickable and then have index++ for next question.*/

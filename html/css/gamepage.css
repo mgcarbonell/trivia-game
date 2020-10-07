@@ -10,12 +10,13 @@ h1 {
 
 #timer{
   float: left;
+  padding: 10px;
   border: 5px black;
 }
 
 #score {
-  float: left;
-
+  float: right;
+  padding: 10px;
 }
 
 .question{
