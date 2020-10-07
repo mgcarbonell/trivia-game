@@ -2,16 +2,16 @@
 /*I'm going to want some sort of CSS to tack the score to the upper right hand corner*/
 /*modal on win though this should be in the javascript.*/
 
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
 .parent {
   display: grid;
   grid-template-columns: repeat(5, 0.5fr);
   grid-template-rows: repeat(6, 0.5fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 1px;
+  grid-row-gap: 10px;
   }
   
   .div1 { grid-area: 1 / 1 / 2 / 2; }
@@ -21,11 +21,38 @@
   .div5 { grid-area: 4 / 2 / 6 / 3; }
   .div6 { grid-area: 4 / 4 / 6 / 5; }
   .div7 { grid-area: 6 / 3 / 7 / 4; }
-  
+
+body {
+  background-color: #FFFFFB;
+}
 h1 {
   position: relative;
   margin: auto;
   text-align: center;
+  color: #444054;
+}
+
+#question{
+  padding: 5px;
+  margin: 0 auto;
+  background-color: #283f9a;
+  color: #FFFFFB;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+}
+
+#answerA{
+  background-color: #283f9a;
+  color: #FFFFFB;
+  padding: 10px 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+  
+}
+
+#answerB{
+  background-color: #283f9a;
+  color: #FFFFFB;
+  padding: 10px 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
 }
 
 #timer{
@@ -33,6 +60,8 @@ h1 {
   padding: 15px;
   margin: 10px;
   border: 2px solid black;
+  background-color: #CE1234;
+  color: 
 }
 
 #score {
@@ -40,8 +69,6 @@ h1 {
   padding: 15px;
   margin: 10px;
   border: 2px solid black;
+  background-color: #3E6E7a;
 }
 
-button {
-  position: absolute;
-}
