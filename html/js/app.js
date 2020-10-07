@@ -3,7 +3,8 @@ console.log("The electric things have their life too. Paltry as those lives are.
 
 
 let timer = 20
-function setTimer(whateverTime){
+function setTimer(twentySeconds){
+  timer = twentySeconds
   const timerInterval = setInterval(() =>{
     if (timer === 0) {
       clearInterval(timerInterval)
@@ -15,7 +16,7 @@ function setTimer(whateverTime){
     timerText.innerHTML = `Timer: ${timer}`     
   }, 1000)
 }
-
+setTimer()
 const game = {
 
   score: 0,
@@ -109,14 +110,11 @@ const game = {
     ],
 
     getQuestion: function () {
-      // for(let i = 0; i < this.questionBank.length; i++){
-        document.getElementById("question").innerHTML = ' ';
 
+      document.getElementById("question").innerHTML = ' ';
+      setTimer(20)
       const newQ = this.questionBank[this.round].question
       document.getElementById("question").append(newQ)
-      // }  
-
-        
       },
 
   
@@ -127,22 +125,15 @@ const game = {
       let answerB = game.questionBank[this.round].b
       document.getElementById("answerA").append(answerA)
       document.getElementById("answerB").append(answerB)
-      console.log(answerA)
+      console.log(answerA, answerB)
   },
   nextRound: function (){
-
+      // this.round++
+      // Do I want this tied to an event listener? Should it be a standalone?
   },
-  // shuffle: function () {
-  //   for(let i = game.questionBank.length -1; i > 0; i--){
-  //       const j = Math.floor(Math.random() * (i + 1));
-  //       const temp = game.questionBank[i];
-  //       game.questionBank[i] = game.questionBank[j];
-  //       game.questionBank[j] = temp;
-  //   }
-  // },
   getScore: function () {
     /*if(player clicks == correct answer){
-    score++
+      score++
     } else if {
       timerReset()
       setUpRound()
@@ -152,14 +143,35 @@ const game = {
     Can I lump in a screen refresh?
     */
   },
-
+  
 }
 
 game.getQuestion() 
 game.getAnswers()
+const answerA = document.getElementById("answerA");
+answerA.addEventListener("click", console.log("Hello!"));
 
-document.getElementById('answerA').addEventListener("click", console.log("Hello!"));
+
+// Notes:
 // can there be an eventListener to run the game.checkScore function. If value == game.questionBank[this.round].correctAnswer score++ round++ else if value != game.questionBank[this.round].correctAnswer round++
+// Should I just scrap the event listener on clicking the right 'container'/'div' and utilize a radio button or some other sort of button? This would mean changing the layout again. Not a big deal. 
+// check if the element has been clicked every 2 seconds:
+// function isElementClicked (){
+//   console.log(elementIsClicked ? 'CLICKED' : 'NOT');
+// }
+// setInterval(isElementClicked, 2000);
+// I could use this above method from stackoverflow, check to see if the div has been clicked every 2 seconds. Would give the user about 10 tries per round. Then I would need something that IF clicked answerA value === game.questionBank[game.round].correctAnswer score++ round++ else round++
+
+
+
+// shuffle: function () {
+//   for(let i = game.questionBank.length -1; i > 0; i--){
+//       const j = Math.floor(Math.random() * (i + 1));
+//       const temp = game.questionBank[i];
+//       game.questionBank[i] = game.questionBank[j];
+//       game.questionBank[j] = temp;
+//   }
+// },
 // game.getAnswers()
 // aButton.addEventListener("click", function(eventObject){
 
@@ -172,10 +184,10 @@ document.getElementById('answerA').addEventListener("click", console.log("Hello!
 // game.shuffle()
   
 // }
-// Notes:
 /* potentially use a forEach(question of the array) and display q&a
 make answers clickable and then have index++ for next question.*/
 // Keep track of how many times getQuestion gets called.
+
 
   /*getNextQuestion: function() {
   }
