@@ -16,8 +16,10 @@ The meaning of the saying to me has many implications, but the core of it I have
 ---
 ### User Stories & Wireframes
 The planning materials used to build this app.
-* High-level user stories.
-* image files of wireframes
+* A game to test your knowledge on the foundations and workings of our government.
+
+* You will be asked about history, elections, and constitutional questions.
+
 
 ![wireframe 1](./wire-frames/wire-frame-1.png)
 
