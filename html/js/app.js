@@ -1,29 +1,14 @@
 
-console.log("The electric things have their life too. Paltry as those lives are.")
+console.log("Do androids dream? Rick asked himself.")
 
-
-let timer = 20
-function setTimer(twentySeconds){
-  timer = twentySeconds
-  const timerInterval = setInterval(() =>{
-    if (timer === 0) {
-      clearInterval(timerInterval)
-    } else {
-      timer--
-      console.log(timer)
-    }
-    const timerText = document.getElementById('timer')
-    timerText.innerHTML = `Timer: ${timer}`     
-  }, 1000)
-}
-setTimer()
 const game = {
 
   score: 0,
   round: 0,
+  timer: 20,
+  intervalHandle: null,
 
-  questionBank: 
-    [
+  questionBank: [
       {
         question: "The U.S. Electoral College is...",
 
@@ -31,9 +16,6 @@ const game = {
         b: "An assembly that formally supervsies and puts on the     Presidential debates.",
         
         correctAnswer: "a",
-      //   getCorrectAnswer: function (){
-      //     return this.a
-      // }
       },
       {
         question: "Which of the following rights is guaranteed by the 5th Amendment?",
@@ -107,63 +89,108 @@ const game = {
 
         correctAnswer: "b"
       }
-    ],
+    ], 
 
     getQuestion: function () {
       document.getElementById("question").innerHTML = ' ';
-      setTimer(20)
-      const newQ = this.questionBank[this.round].question
-      document.getElementById("question").append(newQ)
+      const newQ = this.questionBank[this.round].question;
+      document.getElementById("question").append(newQ);
       },
 
-  
     getAnswers: function (){
-      document.getElementById("answerA", ).innerHTML = ' ';
-      document.getElementById("answerB").innerHTML = ' ';
-      let answerA = game.questionBank[this.round].a
-      let answerB = game.questionBank[this.round].b
-      document.getElementById("answerA").append(answerA)
-      document.getElementById("answerB").append(answerB)
-      console.log(answerA, answerB)
+      document.getElementById("a", ).innerHTML = ' ';
+      document.getElementById("b").innerHTML = ' ';
+      let answerA = game.questionBank[this.round].a;
+      let answerB = game.questionBank[this.round].b;
+      document.getElementById("a").append(answerA);
+      document.getElementById("b").append(answerB);
+      // console.log(answerA, answerB);
   },
+
+  setTimer: function (duration) {
+    this.timer = duration
+    this.intervalHandle = setInterval(() =>{
+          if(this.timer <= 0){
+              clearInterval(this.intervalHandle)
+              this.nextRound()
+          } else {
+              this.timer--;
+              console.log(this.timer)
+          }
+              const timerText = document.getElementById('timer')
+              timerText.innerHTML = `Timer: ${this.timer}`     
+    }, 1000)
+  },
+
+  updateScore: function () {
+    this.score++
+    const updateScore = document.getElementById('score')
+    updateScore.innerHTML = `Score ${game.score}`
+    },
+
   nextRound: function (){
-      // this.round++
-      // Do I want this tied to an event listener? Should it be a standalone?
+      this.round++
+      this.getQuestion()
+      this.getAnswers()
+      clearInterval(this.intervalHandle)    
+      this.setTimer(20)
   },
-  getScore: function () {
-    /*if(player clicks == correct answer){
-      score++
-    } else if {
-      timerReset()
-      setUpRound()
+
+  gameFinish: function() {
+    if(this.round === 9 && this.score > 7){
+      // modal pop up you win!
+      // play html/sounds/hail_to_the_chief.mp3
+    } else if (this.round === 9 && this.score < 7){
+      // modal pop up to you lose, better try again
+      // play html/sounds/sadtrombone.swf.mp3
     }
-    if ()
-    timer reset? goes here? Function does 1 thing and does it well?
-    Can I lump in a screen refresh?
-    */
-  },
-  
+  }  
 }
 
+game.setTimer(20)
+
 game.getQuestion() 
+
 game.getAnswers()
-const answerA = document.getElementById("answerA");
-answerA.addEventListener("click", console.log("Hello!"));
+
+const answerA = document.getElementById("a");
+answerA.addEventListener("click", (event) => {
+    if(event.target.id === game.questionBank[game.round].correctAnswer){
+      game.updateScore()
+      game.nextRound()
+    } else if(event.target.id !== game.questionBank[game.round].correctAnswer){
+      game.nextRound()
+    }
+});
+
+const answerB = document.getElementById("b");
+answerB.addEventListener("click", (event) => {
+  if (event.target.id === game.questionBank[game.round].correctAnswer){
+      game.updateScore()
+      game.nextRound()
+  }else if (event.target.id !== game.questionBank[game.round].correctAnswer){
+      game.nextRound()
+  }
+});
+
 // 
 
 
 //  NOTES:
-
+// To stop the timer from double ticking down we need to figure out a way to clear it before it's called again.
+// addEventListener always takes two things the event (like click) and then a FUNCTION (which can call other functions) or you can just make a named function that's referenced. Or we could even return game.getScore into the EventListener
 // can there be an eventListener to run the game.checkScore function. If value == game.questionBank[this.round].correctAnswer score++ round++ else if value != game.questionBank[this.round].correctAnswer round++
 // Should I just scrap the event listener on clicking the right 'container'/'div' and utilize a radio button or some other sort of button? This would mean changing the layout again. Not a big deal. 
 
 // CONCEPTS
 
-function answerSelection(e){
-  if (e.target.getElementById !== 'answer')
-  console.log("Select answer")
-  console.log(e.target)
-}
+// function answerSelection(e){
+//   if (e.target.getElementById !== 'answer'){
+//   console.log("Select answer")
+//   console.log(e.target)
+//   if (e.target.c)
+//   }
+// }
 
 // function handlePoke(e) {
 //   if (e.target.className !== 'squares'){  
@@ -190,6 +217,21 @@ function answerSelection(e){
 // I could use this above method from stackoverflow, check to see if the div has been clicked every 2 seconds. Would give the user about 10 tries per round. Then I would need something that IF clicked answerA value === game.questionBank[game.round].correctAnswer score++ round++ else round++
 
 // SCRAPS:
+
+// function setTimer(twentySeconds){
+//   timer = twentySeconds
+//   const timerInterval = setInterval(() =>{
+//     if (timer === 0) {
+//       clearInterval(timerInterval)
+//     } else {
+//       timer--
+//       console.log(timer)
+//     }
+//     const timerText = document.getElementById('timer')
+//     timerText.innerHTML = `Timer: ${timer}`     
+//   }, 1000)
+// }
+// setTimer()
 
 // shuffle: function () {
 //   for(let i = game.questionBank.length -1; i > 0; i--){
