@@ -37,21 +37,24 @@ h1 {
   margin: 0 auto;
   background-color: #283f9a;
   color: #FFFFFB;
+  border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
 }
 
-#answerA{
+#a{
   background-color: #283f9a;
   color: #FFFFFB;
   padding: 10px 10px;
+  border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
   
 }
 
-#answerB{
+#b{
   background-color: #283f9a;
   color: #FFFFFB;
   padding: 10px 10px;
+  border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
 }
 
