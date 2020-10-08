@@ -5,6 +5,10 @@
 /* * {
   box-sizing: border-box;
 } */
+* {
+  padding: 0;
+  margin: 0;
+}
 
 body {
   background-image: url("https://www.nps.gov/common/uploads/cropped_image/primary/90E5EB32-BB00-EA88-B133ACDDF7398F4C.jpg");
@@ -30,9 +34,7 @@ body {
   .div6 { grid-area: 4 / 4 / 6 / 5; }
   .div7 { grid-area: 6 / 3 / 7 / 4; }
 
-body {
-  background-color: #FFFFFB;
-}
+  
 h1 {
   background-color: #CE1234;
   border-radius: 10px;
@@ -100,23 +102,18 @@ h1 {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-button {
+.redo{
   padding: 0;
   font: inherit;
   text-align: center;
-  background-color: #CE1234;
-  border-radius: 5px;
-  color: #FFFFFB;
-  cursor: pointer;
-  font-size: 125%;
   text-decoration: none;
-}
-
-.redo{
-  text-align: center;
+  font-size: 125%;
+  background-color: #CE1234;
+  color: #FFFFFB;
+  border-radius: 5px;
+  cursor: pointer;
   margin: auto;
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-decoration: none;
 }
