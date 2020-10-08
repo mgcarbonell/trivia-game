@@ -1,14 +1,19 @@
-/*I'm going to want some sort of CSS to make the timer tacked to the upper left corner*/
-/*I'm going to want some sort of CSS to tack the score to the upper right hand corner*/
-/*modal on win though this should be in the javascript.*/
+:root {
+  --red: #CE1234;
+  --blue: #283F9a;
+  --white: #fffffb;
+  --black: rgba(0, 0, 0, 0.8);
+  --dark: #444054;
+  --light-blue: #3E6E7A;
+  --bounceEasing: cubic-bezier(0.51, 0.92, 0.24, 1.15);
+}
 
-/* * {
-  box-sizing: border-box;
-} */
 * {
   padding: 0;
   margin: 0;
 }
+
+
 
 body {
   background-image: url("https://www.nps.gov/common/uploads/cropped_image/primary/90E5EB32-BB00-EA88-B133ACDDF7398F4C.jpg");
@@ -34,14 +39,14 @@ body {
   .div6 { grid-area: 4 / 4 / 6 / 5; }
   .div7 { grid-area: 6 / 3 / 7 / 4; }
 
-  
+
 h1 {
-  background-color: #CE1234;
+  background-color: var(--red);
   border-radius: 10px;
   position: relative;
   margin: auto;
   text-align: center;
-  color: #444054;
+  color: var(--dark);
   box-sizing: content-box;
   width: 50%;
 }
@@ -49,41 +54,41 @@ h1 {
 #question{
   padding: 5px;
   margin: 0 auto;
-  background-color: #283f9a;
-  color: #FFFFFB;
+  background-color: var(--blue);
+  color: var(--white);
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
 }
 
 #a{
-  background-color: #283f9a;
-  color: #FFFFFB;
+  background-color: var(--blue);
+  color: var(--white);
   padding: 10px 10px;
   border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.3)
   
 }
 
 #b{
-  background-color: #283f9a;
-  color: #FFFFFB;
+  background-color: var(--blue);
+  color: var(--white);
   padding: 10px 10px;
   border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.3)
 }
 
 #timer{
   float: left;
   padding: 10px;
   margin: 10px;
-  border: 2px solid #444054;
+  border: 2px solid var(--dark);
   border-radius: 50%;
   width: 70px;
   height: 70px;
   text-align: center;
   line-height: 70px;
-  background-color: #CE1234;
-  color: #FFFFFB;
+  background-color: var(--red);
+  color: var(--white);
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
@@ -91,14 +96,14 @@ h1 {
   float: right;
   padding: 10px;
   margin: 10px;
-  border: 2px solid#444054;
+  border: 2px solidvar(--dark);
   border-radius: 50%;
   width: 70px;
   height: 70px;
   text-align: center;
   line-height: 70px;
-  background-color: #3E6E7a;
-  color: #FFFFFB;
+  background-color: var(--light-blue);
+  color: var(--white);
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
@@ -108,12 +113,68 @@ h1 {
   text-align: center;
   text-decoration: none;
   font-size: 125%;
-  background-color: #CE1234;
-  color: #FFFFFB;
+  background-color: var(--red);
+  color: var(--white);
   border-radius: 5px;
   cursor: pointer;
   margin: auto;
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.open-modal {
+  font-weight: bold;
+  background: var(--blue);
+  color: var(--white);
+  padding: .75rem 1.75rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+.modal { 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--black);
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.35s ease-in;
+}
+.modal-dialog {
+  position: relative;
+  max-width: 800px;
+  max-height: 80vh;
+  border-radius: 5px;
+  background: var(--white);
+  overflow: auto;
+  cursor: default;
+}
+
+padding: 1rem;
+}
+ 
+.modal-header,
+.modal-footer {
+  background: var(--light-blue);
+}
+ 
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ 
+.modal-header .modal-close {
+  font-size: 1.5rem;
+}
+ 
+.modal p + p {
+  margin-top: 1rem;
 }
