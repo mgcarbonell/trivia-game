@@ -6,6 +6,14 @@
   box-sizing: border-box;
 } */
 
+body {
+  background-image: url("https://www.nps.gov/common/uploads/cropped_image/primary/90E5EB32-BB00-EA88-B133ACDDF7398F4C.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
 .parent {
   display: grid;
   grid-template-columns: repeat(5, 0.5fr);
@@ -26,10 +34,14 @@ body {
   background-color: #FFFFFB;
 }
 h1 {
+  background-color: #CE1234;
+  border-radius: 10px;
   position: relative;
   margin: auto;
   text-align: center;
   color: #444054;
+  box-sizing: content-box;
+  width: 50%;
 }
 
 #question{
@@ -88,3 +100,23 @@ h1 {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+button {
+  padding: 0;
+  font: inherit;
+  text-align: center;
+  background-color: #CE1234;
+  border-radius: 5px;
+  color: #FFFFFB;
+  cursor: pointer;
+  font-size: 125%;
+  text-decoration: none;
+}
+
+.redo{
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+}

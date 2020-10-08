@@ -3,6 +3,14 @@
   src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 }
 
+body {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Jefferson_Memorial_At_Dusk_1.jpg/1280px-Jefferson_Memorial_At_Dusk_1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
 .parent {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -17,8 +25,10 @@
 
 .title {
   color: #444054;
+  background-color: #CE1234;
+  border-radius: 10px;
   text-align: center;
-  padding: 5px;
+  padding: 0px;
 }
 
 .about {
