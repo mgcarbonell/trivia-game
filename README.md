@@ -14,18 +14,18 @@ The planning materials used to build this app.
 * High-level user stories.
 * image files of wireframes
 
-![wireframe 1](./assets/wirefram3.jpg)
+![wireframe 1](./wire-frames/wire-frame-1.png)
 
-![wireframe 2](./assets/wireframe-example-1.png)
+![wireframe 2](./wire-frames/wire-frame-2.png)
 
 ---
 ### Technologies & Code Snippets
-* list of technologies
-* screen captures of your code
+* HTML, CSS, and JavaScript
+* ![some code](./images/event-listeners.png)
 
 ---
 ### Credits
-Give credit to any `codepen` that inspired you, `medium` article that helped you, or `stackoverflow` that pointed you in the right direction.
+Big shoutouts to my instructors James Sinkler for helping me get rid of array iteration, Michael Petty for helping me with my event listeners, my TAs Steven and David for my timer function!
 
 ---
 
