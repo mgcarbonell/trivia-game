@@ -129,26 +129,28 @@ const game = {
     },
 
   nextRound: function (){
-      this.round++
-      this.getQuestion()
-      this.getAnswers()
-      clearInterval(this.intervalHandle)    
-      this.setTimer(20)
-      this.gameFinish()
-      console.log(`The current round is ${this.round}`)
+    this.round++
+    if(this.round == 10){
+        this.gameFinish()
+      } else {
+        this.getQuestion()
+        this.getAnswers()
+        clearInterval(this.intervalHandle)    
+        this.setTimer(20)
+      }
+      // console.log(`The current round is ${this.round}`)
   },
 
   gameFinish: function() {
-    if( this.round > 9 && this.round < 10 ){
-      if( this.score > 7 ){
-        alert("You win!") // stand in for modal
+      if( this.score >= 7 ){
+        alert("You win!") // toggle the modal class
         clearInterval(this.intervalHandle) 
        // play html/sounds/hail_to_the_chief.mp3
       } else if ( this.score < 7 ){
         alert("Oh no :( better try again!") // stand in for modal
         clearInterval(this.intervalHandle) 
       }    // play html/sounds/sadtrombone.swf.mp3
-    }
+  
   }  
 }
 
@@ -178,12 +180,13 @@ answerB.addEventListener("click", (event) => {
   }
 });
 
+const 
 // TO DO:
 
-// Win-Lose conditions
+
 // Modal
 // Watch James' sound lab
-// README.md
+
 
 // CURRENT QUESTIONS:
 
