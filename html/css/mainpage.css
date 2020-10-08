@@ -15,15 +15,42 @@
   .div2 { grid-area: 3 / 2 / 4 / 3; }
   .div3 { grid-area: 4 / 2 / 5 / 3; }
 
-  
-button {
-  padding: 0;
-  border: none;
-  font: inherit;
-  background-color: #283F9A;
-  border-radius: 5px;
-  color: #FFFFFB
-  cursor: pointer;
-  font-size: 125%;
+.title {
+  color: #444054;
+  text-align: center;
+  padding: 5px;
 }
 
+.about {
+  background-color: #283F9a;
+  color: #FFFFFB;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+button {
+  padding: 0;
+  font: inherit;
+  text-align: center;
+  background-color: #CE1234;
+  border-radius: 5px;
+  color: #FFFFFB;
+  cursor: pointer;
+  font-size: 125%;
+  text-decoration: none;
+}
+
+.begin{
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
