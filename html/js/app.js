@@ -115,7 +115,7 @@ const game = {
               this.nextRound()
           } else {
               this.timer--;
-              console.log(this.timer)
+              // console.log(this.timer)
           }
               const timerText = document.getElementById('timer')
               timerText.innerHTML = `Timer: ${this.timer}`     
@@ -134,15 +134,20 @@ const game = {
       this.getAnswers()
       clearInterval(this.intervalHandle)    
       this.setTimer(20)
+      this.gameFinish()
+      console.log(`The current round is ${this.round}`)
   },
 
   gameFinish: function() {
-    if(this.round === 9 && this.score > 7){
-      // modal pop up you win!
-      // play html/sounds/hail_to_the_chief.mp3
-    } else if (this.round === 9 && this.score < 7){
-      // modal pop up to you lose, better try again
-      // play html/sounds/sadtrombone.swf.mp3
+    if( this.round > 9 && this.round < 10 ){
+      if( this.score > 7 ){
+        alert("You win!") // stand in for modal
+        clearInterval(this.intervalHandle) 
+       // play html/sounds/hail_to_the_chief.mp3
+      } else if ( this.score < 7 ){
+        alert("Oh no :( better try again!") // stand in for modal
+        clearInterval(this.intervalHandle) 
+      }    // play html/sounds/sadtrombone.swf.mp3
     }
   }  
 }
@@ -173,8 +178,16 @@ answerB.addEventListener("click", (event) => {
   }
 });
 
-// 
+// TO DO:
 
+// Win-Lose conditions
+// Modal
+// Watch James' sound lab
+// README.md
+
+// CURRENT QUESTIONS:
+
+// win/lose conditions If statements. 10 rounds (n-1)
 
 //  NOTES:
 // To stop the timer from double ticking down we need to figure out a way to clear it before it's called again.
