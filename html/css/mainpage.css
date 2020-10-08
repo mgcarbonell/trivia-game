@@ -1,3 +1,13 @@
+:root {
+  --red: #CE1234;
+  --blue: #283F9a;
+  --white: #fffffb;
+  --black: rgba(0, 0, 0, 0.8);
+  --dark: #444054;
+  --light-blue: #3E6E7A;
+  --bounceEasing: cubic-bezier(0.51, 0.92, 0.24, 1.15);
+}
+
 @font-face {
   font-family: 'Roboto', sans-serif;
   src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
@@ -24,16 +34,16 @@ body {
   .div3 { grid-area: 4 / 2 / 5 / 3; }
 
 .title {
-  color: #444054;
-  background-color: #CE1234;
+  color: var(--dark);
+  background-color: var(--red);
   border-radius: 10px;
   text-align: center;
   padding: 0px;
 }
 
 .about {
-  background-color: #283F9a;
-  color: #FFFFFB;
+  background-color: var(--blue);
+  color: var(--white);
   border-radius: 5px;
   text-align: center;
   padding: 10px;
@@ -44,9 +54,9 @@ button {
   padding: 0;
   font: inherit;
   text-align: center;
-  background-color: #CE1234;
+  background-color: var(--red);
   border-radius: 5px;
-  color: #FFFFFB;
+  color: var(--white);
   cursor: pointer;
   font-size: 125%;
   text-decoration: none;
@@ -64,3 +74,4 @@ button {
 a {
   text-decoration: none;
 }
+
