@@ -69,6 +69,7 @@ h1 {
   border-radius: 5px;
   box-shadow: 5px 10px 10px 0 rgba(0,0,0,0.4);
   font-family: 'Fanwood Text', serif;
+  font-size: 125%;
 }
 
 #a{
@@ -79,6 +80,7 @@ h1 {
   border-radius: 5px;
   box-shadow: 5px 10px 10px 0 rgba(0,0,0,0.4);
   font-family: 'Fanwood Text', serif;
+  font-size: 125%;
 }
 
 #a:hover {
@@ -96,6 +98,7 @@ h1 {
   border-radius: 5px;
   box-shadow: 5px 10px 10px 0 rgba(0,0,0,0.4);
   font-family: 'Fanwood Text', serif;
+  font-size: 125%;
 }
 
 #b:hover {
