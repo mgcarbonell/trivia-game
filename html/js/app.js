@@ -175,6 +175,7 @@ const game = {
           newDiv.style.position = 'relative';
           newDiv.style.margin = '0 auto;';
           newDiv.style.padding = '40px';
+          newDiv.style.fontFamily = `'Roboto Slab', serif`
           document.getElementById('parent').appendChild(newDiv)
           }
           winDisplay()
@@ -206,6 +207,7 @@ const game = {
           newDiv.style.position = 'relative';
           newDiv.style.margin = '0 auto;';
           newDiv.style.padding = '40px';
+          newDiv.style.fontFamily = `'Roboto Slab', serif`
           document.getElementById('parent').appendChild(newDiv)
           }
           loseDisplay()
