@@ -1,6 +1,15 @@
 
 console.log("Do androids dream? Rick asked himself.")
 
+// const openModal = document.querySelectorAll("[data-open]");
+// const isVisible = "is-visible"
+// for(const el of openModal){
+//   el.addEventListener('click', function(){
+//     const modalId = this.dataset.open;
+//     document.getElementById(modalId).classList.add(isVisible)
+//   })
+
+
 const game = {
 
   score: 0,
@@ -104,53 +113,57 @@ const game = {
       let answerB = game.questionBank[this.round].b;
       document.getElementById("a").append(answerA);
       document.getElementById("b").append(answerB);
-      // console.log(answerA, answerB);
   },
 
   setTimer: function (duration) {
-    this.timer = duration
+    this.timer = duration;
     this.intervalHandle = setInterval(() =>{
           if(this.timer <= 0){
-              clearInterval(this.intervalHandle)
-              this.nextRound()
+              clearInterval(this.intervalHandle);
+              this.nextRound();
           } else {
               this.timer--;
-              // console.log(this.timer)
           }
-              const timerText = document.getElementById('timer')
-              timerText.innerHTML = `Timer: ${this.timer}`     
-    }, 1000)
+              const timerText = document.getElementById('timer');
+              timerText.innerHTML = `Timer: ${this.timer}`;     
+    }, 1000);
   },
 
   updateScore: function () {
-    this.score++
-    const updateScore = document.getElementById('score')
-    updateScore.innerHTML = `Score ${game.score}`
+    this.score++;
+    const updateScore = document.getElementById('score');
+    updateScore.innerHTML = `Score ${game.score}`;
     },
 
   nextRound: function (){
-    this.round++
+    this.round++;
     if(this.round == 10){
-        this.gameFinish()
+        this.gameFinish();
       } else {
-        this.getQuestion()
-        this.getAnswers()
-        clearInterval(this.intervalHandle)    
-        this.setTimer(20)
+        this.getQuestion();
+        this.getAnswers();
+        clearInterval(this.intervalHandle);  
+        this.setTimer(20);
       }
-      // console.log(`The current round is ${this.round}`)
   },
 
   gameFinish: function() {
-      if( this.score >= 7 ){
-        alert("You win!") // toggle the modal class
-        clearInterval(this.intervalHandle) 
+      if( this.score >= 6 ){
+        // alert("You win!") // toggle the modal class
+        let audio = new Audio('./sounds/hail_to_the_chief.mp3')
+        audio.play()
+        clearInterval(this.intervalHandle);
+        // document.getElementById("modal1").style.visibility = "visible";
+        // docuement.getElementbyId("modal1").appendChild
        // play html/sounds/hail_to_the_chief.mp3
-      } else if ( this.score < 7 ){
-        alert("Oh no :( better try again!") // stand in for modal
-        clearInterval(this.intervalHandle) 
+      } else if ( this.score < 6 ){
+        // alert("Oh no :( better try again!") // stand in for modal
+        let audio = new Audio('./sounds/sadtrombone.swf.mp3')
+        audio.play()
+        clearInterval(this.intervalHandle);
+        document.getElementById("modal1").style.visibility = "visible";
+
       }    // play html/sounds/sadtrombone.swf.mp3
-  
   }  
 }
 
@@ -179,138 +192,3 @@ answerB.addEventListener("click", (event) => {
       game.nextRound()
   }
 });
-
-const 
-// TO DO:
-
-
-// Modal
-// Watch James' sound lab
-
-
-// CURRENT QUESTIONS:
-
-// win/lose conditions If statements. 10 rounds (n-1)
-
-//  NOTES:
-// To stop the timer from double ticking down we need to figure out a way to clear it before it's called again.
-// addEventListener always takes two things the event (like click) and then a FUNCTION (which can call other functions) or you can just make a named function that's referenced. Or we could even return game.getScore into the EventListener
-// can there be an eventListener to run the game.checkScore function. If value == game.questionBank[this.round].correctAnswer score++ round++ else if value != game.questionBank[this.round].correctAnswer round++
-// Should I just scrap the event listener on clicking the right 'container'/'div' and utilize a radio button or some other sort of button? This would mean changing the layout again. Not a big deal. 
-
-// CONCEPTS
-
-// function answerSelection(e){
-//   if (e.target.getElementById !== 'answer'){
-//   console.log("Select answer")
-//   console.log(e.target)
-//   if (e.target.c)
-//   }
-// }
-
-// function handlePoke(e) {
-//   if (e.target.className !== 'squares'){  
-//     console.log('I poked a square')
-//     console.log(e.target)
-//     e.target.style.opacity = 0
-//     console.log(e.target.style.backgroundColor)
-//     if (e.target.style.backgroundColor === 'blue'){
-//       score++
-//       console.log(score)
-//       document.querySelector('h1').innerHTML = `scoreboard ${score}`
-//     } else {
-//       score--
-//       console.log(score)
-//     }
-//   } 
-// }
-
-// check if the element has been clicked every 2 seconds:
-// function isElementClicked (){
-//   console.log(elementIsClicked ? 'CLICKED' : 'NOT');
-// }
-// setInterval(isElementClicked, 2000);
-// I could use this above method from stackoverflow, check to see if the div has been clicked every 2 seconds. Would give the user about 10 tries per round. Then I would need something that IF clicked answerA value === game.questionBank[game.round].correctAnswer score++ round++ else round++
-
-// SCRAPS:
-
-// function setTimer(twentySeconds){
-//   timer = twentySeconds
-//   const timerInterval = setInterval(() =>{
-//     if (timer === 0) {
-//       clearInterval(timerInterval)
-//     } else {
-//       timer--
-//       console.log(timer)
-//     }
-//     const timerText = document.getElementById('timer')
-//     timerText.innerHTML = `Timer: ${timer}`     
-//   }, 1000)
-// }
-// setTimer()
-
-// shuffle: function () {
-//   for(let i = game.questionBank.length -1; i > 0; i--){
-//       const j = Math.floor(Math.random() * (i + 1));
-//       const temp = game.questionBank[i];
-//       game.questionBank[i] = game.questionBank[j];
-//       game.questionBank[j] = temp;
-//   }
-// },
-// game.getAnswers()
-// aButton.addEventListener("click", function(eventObject){
-
-//if(questions answered correctly < 50% modal to lose screen play sad trombone)
-// if(questions answered correctly > 50% modal to win screen play Hail to the Chief)
-// I'm going to need a couple of event listeners and two clicks.
-// I need a way to assign answer a to a div space. Or if user clicks id a === game.questionBank.correctanswer a + score else next question no score.
-// I need a way to assign answer b to a div space. Or if user clicks id b === game.questionBank.correcntanswer b +score else next question no score.
-// If player clicks div space a and game
-// game.shuffle()
-  
-// }
-/* potentially use a forEach(question of the array) and display q&a
-make answers clickable and then have index++ for next question.*/
-// Keep track of how many times getQuestion gets called.
-
-
-  /*getNextQuestion: function() {
-  }
-*/
-  // timerReset: function() {
-  //   game.timer = intervalTimer
-  //   // const timerInternval = setInterval(() => {
-  //   //   if(timer === 0){
-  //   //     clearInterval(timerInternval)
-  //   //     refresh to a new question
-  //   //     } else {
-  //   //       time--
-  //   //       console.log(timer)
-  //   //     }
-  //   //     const timerText = document.getElementById('timer')
-  //   //     timerText.innerHTML = `Timer: ${game.timer}s`
-  //   //     }
-  // }
-  // /*
-  // setUpRound: function (){ <- scrap
-  //   if(current round < game.questionBank.length){
-  //     Reset the elements to prep for getAnswer and getQuestion
-  //     So sort of like the deal function?
-  //     while(container.firstChild){
-  //       container.firstChild.remove();
-  //       newQuestion.setAttribute
-  //       newAnswerA.setAttribute
-  //       newAnswerB.setAttribute
-  //     }
-  //   } else if(current round >= game.questionBank.length){
-  //     tally score?
-  //     if(score < 7){
-  //       modal lose screen play sadtrombone
-  //     } else if (score > 7){
-  //       modal win screen play Hail to the Chief
-  //     }
-  //   }
-
-  //   This would infer that we need a question element, answerA and answerB element.
-  // },
-  // */
