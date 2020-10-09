@@ -34,7 +34,7 @@ The planning materials used to build this app.
 
 ---
 ### Credits
-Big shoutouts to my instructors James Sinkler for helping me get rid of array iteration and Michael Petty for helping me with my event listeners. To the TAs Steven and David: thank you for the help on my timer function. The modal design I learned from [Georges Martsoukos](https://webdesign.tutsplus.com/tutorials/how-to-build-flexible-modal-dialogs-with-html-css-and-javascript--cms-33500), and the grid layout was from [sarah_edo](https://cssgrid-generator.netlify.app/).
+Big shoutouts to my instructors James Sinkler for helping me get rid of array iteration and Michael Petty for helping me with my event listeners. To the TAs Steven and David: thank you for the help on my timer function. The grid layout is courtesy of [sarah_edo](https://cssgrid-generator.netlify.app/).
 
 ---
 
