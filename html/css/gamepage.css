@@ -5,7 +5,6 @@
   --black: rgba(0, 0, 0, 0.8);
   --dark: #444054;
   --light-blue: #3E6E7A;
-  --bounceEasing: cubic-bezier(0.51, 0.92, 0.24, 1.15);
 }
 
 * {
@@ -147,6 +146,7 @@ h1 {
   opacity: 0;
   transition: all 0.35s ease-in;
 }
+
 .modal-dialog {
   position: relative;
   max-width: 800px;
@@ -157,24 +157,35 @@ h1 {
   cursor: default;
 }
 
+.modal-dialog > *{
 padding: 1rem;
 }
- 
-.modal-header,
-.modal-footer {
+
+.modal-header, .modal-footer {
   background: var(--light-blue);
 }
- 
+
 .modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
- 
+
 .modal-header .modal-close {
   font-size: 1.5rem;
 }
- 
+
 .modal p + p {
   margin-top: 1rem;
+}
+
+.modal {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.35s ease-in;
+}
+ 
+.modal.is-visible {
+  visibility: visible;
+  opacity: 1;
 }
