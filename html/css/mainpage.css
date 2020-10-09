@@ -60,6 +60,7 @@ button {
   cursor: pointer;
   font-size: 125%;
   text-decoration: none;
+  /* hover: ; */
 }
 
 .begin{
