@@ -31,10 +31,11 @@ The planning materials used to build this app.
 ### Technologies & Code Snippets
 * HTML, CSS, and JavaScript
 * ![Event listeners using HTML elements](./images/event-listeners.png)
+* ![Timer function](./images/timer-function.png)
 
 ---
 ### Credits
-Big shoutouts to my instructors James Sinkler for helping me get rid of array iteration and Michael Petty for helping me with my event listeners. To the TAs Steven and David: thank you for the help on my timer function. The grid layout is courtesy of [sarah_edo](https://cssgrid-generator.netlify.app/).
+Big shoutouts to my instructors James Sinkler for helping me get rid of array iteration and Michael Petty for helping me with my event listeners. To the TAs Seanny, Mac, Steven, and David thank you for all the time spent with me trying to get the small things to work, the small things really add up. Shout out to my classmate Booker for the :root{} css idea, and shout out to my classmate Devin for the moral support. The grid layout is courtesy of [sarah_edo](https://cssgrid-generator.netlify.app/).
 
 ---
 
