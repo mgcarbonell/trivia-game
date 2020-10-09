@@ -83,8 +83,9 @@ h1 {
 
 #a:hover {
   background: rgba(28, 44, 107, 1);
-  transition: all 0.5s;
-  border: 2px solid var(--black);
+  transition: all 0.3s;
+  outline: 5px solid var(--black);
+  outline-offset: -5px
 }
 
 #b{
@@ -100,7 +101,8 @@ h1 {
 #b:hover {
   background: rgba(28, 44, 107, 1);
   transition: all 0.3s;
-  border: 2px solid var(--black)
+  outline: 5px solid var(--black);
+  outline-offset: -5px
 }
 
 #timer{
