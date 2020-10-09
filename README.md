@@ -42,6 +42,10 @@ Big shoutouts to my instructors James Sinkler for helping me get rid of array it
 ### Future development
 I definitely want to expand the game to have multiple categories, with more questions presented to the user. Ideally the categories would be split into history inspired by Howard Zinn, more precise workings of the US government, and then some fun ones about popular culture (movies, tv shows, and music). I would also like to add in some explanations to present to the user about the correct answers, and even a list of the questions that they got wrong.
 
+### Things to update
+* Centering the text a little bit more.
+* Larger, more legible fonts.
+
 
 
 ### Link to live site
