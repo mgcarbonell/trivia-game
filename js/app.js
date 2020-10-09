@@ -1,15 +1,6 @@
-
 console.log("Do androids dream? Rick asked himself.")
 
-// const openModal = document.querySelectorAll("[data-open]");
-// const isVisible = "is-visible"
-// for(const el of openModal){
-//   el.addEventListener('click', function(){
-//     const modalId = this.dataset.open;
-//     document.getElementById(modalId).classList.add(isVisible)
-//   })
-
-
+// Game object.
 const game = {
 
   score: 0,
@@ -17,6 +8,7 @@ const game = {
   timer: 20,
   intervalHandle: null,
 
+  // Questions
   questionBank: [
       {
         question: "The U.S. Electoral College is...",
@@ -100,12 +92,14 @@ const game = {
       }
     ], 
 
+    // Pulling a question.
     getQuestion: function () {
       document.getElementById("question").innerHTML = ' ';
       const newQ = this.questionBank[this.round].question;
       document.getElementById("question").append(newQ);
       },
 
+    // Pulling our answers.
     getAnswers: function (){
       document.getElementById("a", ).innerHTML = ' ';
       document.getElementById("b").innerHTML = ' ';
@@ -115,6 +109,7 @@ const game = {
       document.getElementById("b").append(answerB);
   },
 
+  // Main timer function.
   setTimer: function (duration) {
     this.timer = duration;
     this.intervalHandle = setInterval(() =>{
@@ -129,12 +124,14 @@ const game = {
     }, 1000);
   },
 
+  // Scoring function.
   updateScore: function () {
     this.score++;
     const updateScore = document.getElementById('score');
     updateScore.innerHTML = `Score ${game.score}`;
     },
 
+  // Advance round. Round set up. Win/lose check. 
   nextRound: function (){
     this.round++;
     if(this.round == 10){
@@ -147,13 +144,17 @@ const game = {
       }
   },
 
+  // Win/lose conditions
   gameFinish: function() {
-      if( this.score >= 6 ){
+ 
+    if( this.score >= 6 ){     // Win.
+
         let audio = new Audio('./sounds/hail_to_the_chief.mp3');
         audio.play();
 
         clearInterval(game.intervalHandle);
 
+        // Removing elements.
         let winQ = document.getElementById('question');
         winQ.remove();
         let winA = document.getElementById('a');
@@ -161,31 +162,34 @@ const game = {
         let winB = document.getElementById('b');
         winB.remove();
 
+        // Setting our winning display. Here there be monsters.
         function winDisplay(){
           const newDiv = document.createElement('div');
-          newDiv.innerHTML = `Congratulations! With a score of ${game.score} you pass with flying colors!`
-          newDiv.className = 'div8';
-          newDiv.style.backgroundColor = 'var(--blue)';
-          newDiv.style.color = 'var(--white)';
-          newDiv.style.fontSize = '1.5em';
-          newDiv.style.borderRadius = '5px';
-          newDiv.style.textAlign = 'center';
-          newDiv.style.verticalAlign = 'middle';
-          newDiv.style.boxShadow = '4px 10px 10px 0 rgba(0,0,0,0.4)';
-          newDiv.style.position = 'relative';
-          newDiv.style.margin = '0 auto;';
-          newDiv.style.padding = '40px';
-          newDiv.style.fontFamily = `'Roboto Slab', serif`
+              newDiv.innerHTML = `Congratulations! With a score of ${game.score} you pass with flying colors!`
+              newDiv.className = 'div8';
+              newDiv.style.backgroundColor = 'var(--blue)';
+              newDiv.style.color = 'var(--white)';
+              newDiv.style.fontSize = '1.5em';
+              newDiv.style.borderRadius = '5px';
+              newDiv.style.textAlign = 'center';
+              newDiv.style.verticalAlign = 'middle';
+              newDiv.style.boxShadow = '4px 10px 10px 0 rgba(0,0,0,0.4)';
+              newDiv.style.position = 'relative';
+              newDiv.style.margin = '0 auto;';
+              newDiv.style.padding = '40px';
+              newDiv.style.fontFamily = `'Roboto Slab', serif`
           document.getElementById('parent').appendChild(newDiv)
           }
           winDisplay()
-      } else if ( this.score < 6 ){
+
+      } else if ( this.score < 6 ){ //Lose.
 
         let audio = new Audio('./sounds/sadtrombone.swf.mp3');
         audio.play();
 
         clearInterval(game.intervalHandle);
 
+        // Removing our elements.
         let loseQ = document.getElementById('question');
         loseQ.remove();
         let loseA = document.getElementById('a');
@@ -193,21 +197,22 @@ const game = {
         let loseB = document.getElementById('b');
         loseB.remove();
 
+        // Setting our lose display. Here there be monsters.
         function loseDisplay(){
           const newDiv = document.createElement('div');
-          newDiv.innerHTML = `Ouch you can't pass with a score of ${game.score}. Better luck next time!`;
-          newDiv.className = 'div8';
-          newDiv.style.backgroundColor = 'var(--blue)';
-          newDiv.style.color = 'var(--white)';
-          newDiv.style.fontSize = '1.5em';
-          newDiv.style.borderRadius = '5px';
-          newDiv.style.textAlign = 'center';
-          newDiv.style.verticalAlign = 'middle';
-          newDiv.style.boxShadow = '5px 10px 10px 0 rgba(0,0,0,0.4)';
-          newDiv.style.position = 'relative';
-          newDiv.style.margin = '0 auto;';
-          newDiv.style.padding = '40px';
-          newDiv.style.fontFamily = `'Roboto Slab', serif`
+              newDiv.innerHTML = `Ouch you can't pass with a score of ${game.score}. Better luck next time!`;
+              newDiv.className = 'div8';
+              newDiv.style.backgroundColor = 'var(--blue)';
+              newDiv.style.color = 'var(--white)';
+              newDiv.style.fontSize = '1.5em';
+              newDiv.style.borderRadius = '5px';
+              newDiv.style.textAlign = 'center';
+              newDiv.style.verticalAlign = 'middle';
+              newDiv.style.boxShadow = '5px 10px 10px 0 rgba(0,0,0,0.4)';
+              newDiv.style.position = 'relative';
+              newDiv.style.margin = '0 auto;';
+              newDiv.style.padding = '40px';
+              newDiv.style.fontFamily = `'Roboto Slab', serif`
           document.getElementById('parent').appendChild(newDiv)
           }
           loseDisplay()
@@ -215,12 +220,14 @@ const game = {
   }  
 }
 
+// Game set up.
 game.setTimer(20)
 
 game.getQuestion() 
 
 game.getAnswers()
 
+// When user clicks left hand answer box
 const answerA = document.getElementById("a");
 answerA.addEventListener("click", (event) => {
     if(event.target.id === game.questionBank[game.round].correctAnswer){
@@ -231,6 +238,7 @@ answerA.addEventListener("click", (event) => {
     }
 });
 
+// When user clicks right hand answer box
 const answerB = document.getElementById("b");
 answerB.addEventListener("click", (event) => {
   if (event.target.id === game.questionBank[game.round].correctAnswer){
@@ -240,9 +248,3 @@ answerB.addEventListener("click", (event) => {
       game.nextRound()
   }
 });
-
-// NOTES:
-
-// best time for modals are sign ups (if the user wants it)
-// Other options: Toast -> 
-// Frontend frameworks (bootstrap)
