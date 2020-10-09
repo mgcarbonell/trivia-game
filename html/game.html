@@ -8,7 +8,7 @@
   <script src="js/app.js" defer></script>
 </head>
 <body>
-  <div class="parent">
+  <div class="parent" id = "parent">
     <div class="div1">
         <span id="timer" class="div1">Timer: </span> 
     </div>
@@ -16,25 +16,18 @@
         <span id="score" class="div2">Score: </span>
     </div>
     <div class="div3"> 
-        <h1 class="div3">POPULUS</h1>
+        <h1 class="div3" id = "title">POPULUS</h1>
     </div>
     <div class="div4" id = "question"></div>
     <div class="div5" class = "answer" id = "a"></div>
     <div class="div6" class = "answer" id = "b"></div>
-      <div class="div7">
+
+      <div class="div7" id = "button">
       <!-- <button type="button" class="begin">Begin</button>-->
         <button type="button" class="redo"><a href="index.html">Start Over?</a></button>
       </div>
     </div>
-    <div class="modal" id="modal1">
-      <div class="modal-dialog">
-        <header class="modal-header">
-          <button class="close-modal" aria-label="close modal" data-close>✕</button>
-        </header>
-        <section class="modal-content"></section>
-        <footer class="modal-footer"></footer>
-      </div>
-    </div>
+      <!-- have a div that spans across div 4 => div 6 and there we would place our win-lose text-->
   </body>
 
 </html> 
