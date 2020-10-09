@@ -149,21 +149,67 @@ const game = {
 
   gameFinish: function() {
       if( this.score >= 6 ){
-        // alert("You win!") // toggle the modal class
-        let audio = new Audio('./sounds/hail_to_the_chief.mp3')
-        audio.play()
-        clearInterval(this.intervalHandle);
-        // document.getElementById("modal1").style.visibility = "visible";
-        // docuement.getElementbyId("modal1").appendChild
-       // play html/sounds/hail_to_the_chief.mp3
-      } else if ( this.score < 6 ){
-        // alert("Oh no :( better try again!") // stand in for modal
-        let audio = new Audio('./sounds/sadtrombone.swf.mp3')
-        audio.play()
-        clearInterval(this.intervalHandle);
-        document.getElementById("modal1").style.visibility = "visible";
+        let audio = new Audio('./sounds/hail_to_the_chief.mp3');
+        audio.play();
 
-      }    // play html/sounds/sadtrombone.swf.mp3
+        clearInterval(game.intervalHandle);
+
+        let winQ = document.getElementById('question');
+        winQ.remove();
+        let winA = document.getElementById('a');
+        winA.remove();
+        let winB = document.getElementById('b');
+        winB.remove();
+
+        function winDisplay(){
+          const newDiv = document.createElement('div');
+          newDiv.innerHTML = `Congratulations! With a score of ${game.score} you pass with flying colors!`
+          newDiv.className = 'div8';
+          newDiv.style.backgroundColor = 'var(--blue)';
+          newDiv.style.color = 'var(--white)';
+          newDiv.style.fontSize = '1.5em';
+          newDiv.style.borderRadius = '5px';
+          newDiv.style.textAlign = 'center';
+          newDiv.style.verticalAlign = 'middle';
+          newDiv.style.boxShadow = '4px 10px 10px 0 rgba(0,0,0,0.4)';
+          newDiv.style.position = 'relative';
+          newDiv.style.margin = '0 auto;';
+          newDiv.style.padding = '40px';
+          document.getElementById('parent').appendChild(newDiv)
+          }
+          winDisplay()
+      } else if ( this.score < 6 ){
+
+        let audio = new Audio('./sounds/sadtrombone.swf.mp3');
+        audio.play();
+
+        clearInterval(game.intervalHandle);
+
+        let loseQ = document.getElementById('question');
+        loseQ.remove();
+        let loseA = document.getElementById('a');
+        loseA.remove();
+        let loseB = document.getElementById('b');
+        loseB.remove();
+
+        function loseDisplay(){
+          const newDiv = document.createElement('div');
+          newDiv.innerHTML = `Ouch you can't pass with a score of ${game.score}. Better luck next time!`;
+          newDiv.className = 'div8';
+          newDiv.style.backgroundColor = 'var(--blue)';
+          newDiv.style.color = 'var(--white)';
+          newDiv.style.fontSize = '1.5em';
+          newDiv.style.borderRadius = '5px';
+          newDiv.style.textAlign = 'center';
+          newDiv.style.verticalAlign = 'middle';
+          newDiv.style.boxShadow = '5px 10px 10px 0 rgba(0,0,0,0.4)';
+          newDiv.style.position = 'relative';
+          newDiv.style.margin = '0 auto;';
+          newDiv.style.padding = '40px';
+          document.getElementById('parent').appendChild(newDiv)
+          }
+          loseDisplay()
+      }   
   }  
 }
 
@@ -192,3 +238,9 @@ answerB.addEventListener("click", (event) => {
       game.nextRound()
   }
 });
+
+// NOTES:
+
+// best time for modals are sign ups (if the user wants it)
+// Other options: Toast -> 
+// Frontend frameworks (bootstrap)
